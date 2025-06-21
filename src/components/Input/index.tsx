@@ -4,5 +4,7 @@ import { s } from "./style";
 type InputProps = TextInputProps;
 
 export default function Input({ ...rest }: InputProps) {
-	return <TextInput style={s.container} {...rest} />;
+	return (
+		<TextInput placeholderTextColor="#74798B" style={s.container} {...rest} />
+	);
 }
