@@ -23,14 +23,14 @@ export default function App() {
 					<View style={s.content}>
 						<View style={s.contentHeader}>
 							<Filter
-								status={FilterStatus.DONE}
-								isActive={filter === FilterStatus.DONE}
-								onPress={() => setFilter(FilterStatus.DONE)}
-							/>
-							<Filter
 								status={FilterStatus.PENDING}
 								isActive={filter === FilterStatus.PENDING}
 								onPress={() => setFilter(FilterStatus.PENDING)}
+							/>
+							<Filter
+								status={FilterStatus.DONE}
+								isActive={filter === FilterStatus.DONE}
+								onPress={() => setFilter(FilterStatus.DONE)}
 							/>
 							<TouchableOpacity
 								style={s.clearButton}
