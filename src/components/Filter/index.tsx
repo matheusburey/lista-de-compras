@@ -3,7 +3,6 @@ import {
 	TouchableOpacity,
 	type TouchableOpacityProps,
 } from "react-native";
-import { CircleCheck } from "lucide-react-native";
 import { s } from "./style";
 import { FilterStatus } from "@/types/FilterStatus";
 import StatusIcon from "../StatusIcon";
@@ -17,6 +16,7 @@ export default function Filter({ status, isActive, ...rest }: InputProps) {
 	return (
 		<TouchableOpacity
 			style={[s.container, { opacity: isActive ? 1 : 0.5 }]}
+			disabled={isActive}
 			{...rest}
 		>
 			<StatusIcon status={status} />

@@ -1,12 +1,24 @@
-import { Image, View, TouchableOpacity, Text, FlatList } from "react-native";
+import {
+	Image,
+	View,
+	TouchableOpacity,
+	Text,
+	FlatList,
+	Alert,
+} from "react-native";
+import { use, useEffect, useMemo, useState } from "react";
+import { uuidv7 } from "uuidv7";
+
+import Item from "@/components/Item";
+import type { ItemData } from "@/types/item";
+
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import Filter from "@/components/Filter";
 import { FilterStatus } from "@/types/FilterStatus";
+
 import { s } from "./style";
-import { useState } from "react";
-import Item from "@/components/Item";
-import type { ItemData } from "@/types/item";
+import { getAllItems, insertItem } from "@/database/items";
 
 export default function App() {
 	const [inputValue, setInputValue] = useState("");
@@ -14,16 +26,20 @@ export default function App() {
 	const [filter, setFilter] = useState<FilterStatus | null>(null);
 
 	function onAddItem() {
-		const idx = items.length ? items.length - 1 : 0;
-		const id = `${Number(items[idx]?.id || 0) + 1}`;
-		setItems((prevState) => [
-			...prevState,
-			{
-				id,
-				description: inputValue,
-				status: FilterStatus.PENDING,
-			},
-		]);
+		const description = inputValue.trim();
+		if (!description) {
+			Alert.alert("Descrição não pode ser vazia");
+			return;
+		}
+
+		const newItem = {
+			id: uuidv7(),
+			description: description,
+			status: FilterStatus.PENDING,
+		};
+
+		setItems((prevState) => [...prevState, newItem]);
+		insertItem(newItem);
 		setInputValue("");
 	}
 
@@ -48,6 +64,21 @@ export default function App() {
 		);
 	}
 
+	const filteredItems = useMemo(() => {
+		if (filter) {
+			return items.filter((i) => i.status === filter);
+		}
+		return items;
+	}, [items, filter]);
+
+	useEffect(() => {
+		(async () => {
+			const items = await getAllItems();
+			console.log(items);
+			setItems(items);
+		})();
+	}, []);
+
 	return (
 		<View style={s.container}>
 			<Image style={s.logo} source={require("@/assets/logo.png")} />
@@ -57,7 +88,7 @@ export default function App() {
 					onChangeText={setInputValue}
 					placeholder="O que você precisa comprar?"
 				/>
-				<Button onPress={onAddItem} title="Adicionar" />
+				<Button onPress={onAddItem} disabled={!inputValue} title="Adicionar" />
 			</View>
 			<View style={s.content}>
 				<View style={s.contentHeader}>
@@ -81,7 +112,7 @@ export default function App() {
 				<FlatList
 					contentContainerStyle={s.listContent}
 					showsVerticalScrollIndicator={false}
-					data={items}
+					data={filteredItems}
 					keyExtractor={(item) => item.id}
 					renderItem={({ item }) => (
 						<Item
