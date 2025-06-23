@@ -11,12 +11,6 @@ export const s = StyleSheet.create({
 		height: 34,
 		width: 134,
 	},
-	form: {
-		width: "100%",
-		paddingHorizontal: 16,
-		gap: 7,
-		marginTop: 36,
-	},
 	content: {
 		flex: 1,
 		width: "100%",
@@ -40,21 +34,5 @@ export const s = StyleSheet.create({
 		fontSize: 12,
 		fontWeight: 600,
 		color: "#828282",
-	},
-	separator: {
-		width: "100%",
-		height: 1,
-		backgroundColor: "#EEF0F5",
-		marginVertical: 16,
-	},
-	listContent: {
-		paddingTop: 24,
-		paddingBottom: 42,
-	},
-	emptyListText: {
-		fontSize: 14,
-		fontWeight: 600,
-		color: "#808080",
-		textAlign: "center",
 	},
 });
