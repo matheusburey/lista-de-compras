@@ -10,13 +10,19 @@ export default function FormItem() {
 	const [inputValue, setInputValue] = useState("");
 
 	async function handleAddItem() {
-		const description = inputValue.trim();
-		if (!description) {
-			Alert.alert("Descrição não pode ser vazia");
-			return;
+		try {
+			const description = inputValue.trim();
+			if (!description) {
+				Alert.alert("Descrição não pode ser vazia");
+				return;
+			}
+			await onAddItem(description);
+			Alert.alert("Adicionado", `Adicionado "${description}"`);
+			setInputValue("");
+		} catch (error) {
+			console.log(error);
+			Alert.alert("Ops", "Não foi possível adicionar o item");
 		}
-		await onAddItem(description);
-		setInputValue("");
 	}
 
 	return (
