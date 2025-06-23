@@ -5,3 +5,10 @@ export type ItemData = {
 	description: string;
 	status: FilterStatus;
 };
+
+export type ItemContextType = {
+	items: ItemData[];
+	onAddItem: (description: string) => Promise<void>;
+	onUpdateItemStatus: (item: ItemData) => Promise<void>;
+	onRemoveItem: (id: string) => Promise<void>;
+};
