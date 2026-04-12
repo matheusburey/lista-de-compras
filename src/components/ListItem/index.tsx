@@ -1,10 +1,11 @@
-import { ItemContext } from "@/context/Item";
-import { useContext, useEffect, useMemo } from "react";
+import { useContext, useMemo } from "react";
 import { Alert, FlatList, Text, View } from "react-native";
-import Item from "../Item";
-import { s } from "./style";
+
+import Item from "@/components/Item";
+import { ItemContext } from "@/context/Item";
 import { FilterStatus } from "@/types/FilterStatus";
 import type { ItemData } from "@/types/item";
+import { s } from "./style";
 
 export default function ListItem({ filter }: { filter: FilterStatus | null }) {
 	const { items, onRemoveItem, onUpdateItemStatus } = useContext(ItemContext);

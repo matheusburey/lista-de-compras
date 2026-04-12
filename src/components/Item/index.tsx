@@ -1,8 +1,9 @@
-import { View, Text, TouchableOpacity } from "react-native";
-import { s } from "./style";
-import StatusIcon from "../StatusIcon";
 import { Trash2 } from "lucide-react-native";
+import { Text, TouchableOpacity, View } from "react-native";
+
 import type { ItemData } from "@/types/item";
+import StatusIcon from "../StatusIcon";
+import { s } from "./style";
 
 type ItemProps = {
 	data: ItemData;

@@ -3,9 +3,10 @@ import {
 	TouchableOpacity,
 	type TouchableOpacityProps,
 } from "react-native";
-import { s } from "./style";
+
 import { FilterStatus } from "@/types/FilterStatus";
 import StatusIcon from "../StatusIcon";
+import { s } from "./style";
 
 type InputProps = TouchableOpacityProps & {
 	status: FilterStatus;

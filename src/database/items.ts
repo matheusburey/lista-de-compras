@@ -1,7 +1,7 @@
 import type { SQLiteDatabase } from "expo-sqlite";
 
-import type { ItemData } from "@/types/item";
 import type { FilterStatus } from "@/types/FilterStatus";
+import type { ItemData } from "@/types/item";
 
 export const DATABASE_NAME = "./database.db";
 const DATABASE_VERSION = 1;

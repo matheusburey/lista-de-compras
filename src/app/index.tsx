@@ -1,15 +1,14 @@
-import { useState } from "react";
-import { Image, View, TouchableOpacity, Text, Alert } from "react-native";
 import { SQLiteProvider } from "expo-sqlite";
-
-import { s } from "./style";
+import { useState } from "react";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 
 import Filter from "@/components/Filter";
-import ListItem from "@/components/ListItem";
 import FormItem from "@/components/FormItem";
+import ListItem from "@/components/ListItem";
+import { Providers } from "@/context";
 import { DATABASE_NAME, migrateDbIfNeeded } from "@/database/items";
 import { FilterStatus } from "@/types/FilterStatus";
-import { Providers } from "@/context";
+import { s } from "./style";
 
 export default function App() {
 	const [filter, setFilter] = useState<FilterStatus | null>(null);
