@@ -9,20 +9,20 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~53.0.27",
-    "expo-sqlite": "~15.2.14",
-    "expo-status-bar": "~3.0.9",
+    "expo": "~55.0.14",
+    "expo-sqlite": "~55.0.15",
+    "expo-status-bar": "~55.0.5",
     "lucide-react-native": "^1.8.0",
-    "react": "19.0.0",
-    "react-native": "0.79.3",
-    "react-native-svg": "15.11.2",
-    "uuidv7": "^1.0.2"
+    "react": "19.2.0",
+    "react-native": "0.83.4",
+    "react-native-svg": "15.15.3",
+    "uuidv7": "^1.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
+    "@babel/core": "^7.29.0",
     "@biomejs/biome": "2.4.11",
-    "@types/react": "~19.0.14",
-    "typescript": "~5.9.3"
+    "@types/react": "~19.2.14",
+    "typescript": "~5.9.2"
   },
   "private": true
 }
