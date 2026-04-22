@@ -18,21 +18,17 @@ export default function ListItem({ filter }: { filter: FilterStatus | null }) {
 	}, [items, filter]);
 
 	function handleDeleteItem(itemId: ItemData) {
-		Alert.alert(
-			"Excluir item",
-			`Deseja excluir o item "${itemId.description}"?`,
-			[
-				{
-					text: "Não",
-					style: "cancel",
-				},
-				{
-					text: "Sim",
-					style: "destructive",
-					onPress: () => onRemoveItem(itemId.id),
-				},
-			],
-		);
+		Alert.alert("Excluir item", `Deseja excluir "${itemId.description}"?`, [
+			{
+				text: "Não",
+				style: "cancel",
+			},
+			{
+				text: "Sim",
+				style: "destructive",
+				onPress: () => onRemoveItem(itemId.id),
+			},
+		]);
 	}
 
 	return (

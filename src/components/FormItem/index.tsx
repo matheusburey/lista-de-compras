@@ -12,13 +12,12 @@ export default function FormItem() {
 
 	async function handleAddItem() {
 		try {
-			const description = inputValue.trim();
-			if (!description) {
-				Alert.alert("Descrição não pode ser vazia");
-				return;
+			const item = inputValue.trim();
+			if (!item) {
+				return Alert.alert("Item não pode ser vazio");
 			}
-			await onAddItem(description);
-			Alert.alert("Adicionado", `Adicionado "${description}"`);
+			await onAddItem(item);
+			Alert.alert("Adicionado", `Adicionado "${item}" à lista de compras`);
 			setInputValue("");
 		} catch (error) {
 			console.log(error);

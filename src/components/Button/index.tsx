@@ -9,9 +9,14 @@ type ButtonProps = TouchableOpacityProps & {
 	title: string;
 };
 
-export default function Button({ title, ...rest }: ButtonProps) {
+export default function Button({ title, disabled, ...rest }: ButtonProps) {
 	return (
-		<TouchableOpacity style={s.container} activeOpacity={0.8} {...rest}>
+		<TouchableOpacity
+			style={[s.button, disabled && s.buttonDisabled]}
+			activeOpacity={0.8}
+			disabled={disabled}
+			{...rest}
+		>
 			<Text style={s.text}>{title}</Text>
 		</TouchableOpacity>
 	);

@@ -1,5 +1,5 @@
 import { useSQLiteContext } from "expo-sqlite";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import { uuidv7 } from "uuidv7";
 
 import * as DbItem from "@/database/items";
@@ -37,15 +37,14 @@ export function ItemProvider({ children }: { children: React.ReactNode }) {
 		await getItems();
 	}
 
-	async function getItems() {
+	const getItems = useCallback(async () => {
 		const items = await DbItem.getAllItems(db);
 		setItems(items);
-	}
+	}, [db]);
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		getItems();
-	}, []);
+	}, [getItems]);
 
 	return (
 		<ItemContext.Provider
