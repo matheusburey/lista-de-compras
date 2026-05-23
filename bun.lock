@@ -7,6 +7,7 @@
       "dependencies": {
         "expo": "~55.0.14",
         "expo-dev-client": "~55.0.28",
+        "expo-splash-screen": "~55.0.19",
         "expo-sqlite": "~55.0.15",
         "expo-status-bar": "~55.0.5",
         "lucide-react-native": "^1.8.0",
@@ -262,7 +263,7 @@
 
     "@expo/plist": ["@expo/plist@0.5.2", "", { "dependencies": { "@xmldom/xmldom": "^0.8.8", "base64-js": "^1.5.1", "xmlbuilder": "^15.1.1" } }, "sha512-o4xdVdBpe4aTl3sPMZ2u3fJH4iG1I768EIRk1xRZP+GaFI93MaR3JvoFibYqxeTmLQ1p1kNEVqylfUjezxx45g=="],
 
-    "@expo/prebuild-config": ["@expo/prebuild-config@55.0.14", "", { "dependencies": { "@expo/config": "~55.0.14", "@expo/config-plugins": "~55.0.8", "@expo/config-types": "^55.0.5", "@expo/image-utils": "^0.8.13", "@expo/json-file": "^10.0.13", "@react-native/normalize-colors": "0.83.4", "debug": "^4.3.1", "resolve-from": "^5.0.0", "semver": "^7.6.0", "xml2js": "0.6.0" }, "peerDependencies": { "expo": "*" } }, "sha512-88Ou8HF8sWcXD9wduQZ2XBwNMzD8t2x3FtlM0F++rhl9a+aNk2SAj8yhwuGsoEJpbxWG7qq35Yof1r7uU4Z16w=="],
+    "@expo/prebuild-config": ["@expo/prebuild-config@55.0.16", "", { "dependencies": { "@expo/config": "~55.0.15", "@expo/config-plugins": "~55.0.8", "@expo/config-types": "^55.0.5", "@expo/image-utils": "^0.8.13", "@expo/json-file": "^10.0.13", "@react-native/normalize-colors": "0.83.6", "debug": "^4.3.1", "resolve-from": "^5.0.0", "semver": "^7.6.0", "xml2js": "0.6.0" }, "peerDependencies": { "expo": "*" } }, "sha512-o4EAVgDGk1lISirtMD8hciO2vyMp7cWlPdfTtjjd5AXSfODVYDIDhygXrfvVQHmJXAztVqPUTKJT+BYOsVkYGQ=="],
 
     "@expo/require-utils": ["@expo/require-utils@55.0.4", "", { "dependencies": { "@babel/code-frame": "^7.20.0", "@babel/core": "^7.25.2", "@babel/plugin-transform-modules-commonjs": "^7.24.8" }, "peerDependencies": { "typescript": "^5.0.0 || ^5.0.0-0" }, "optionalPeers": ["typescript"] }, "sha512-JAANvXqV7MOysWeVWgaiDzikoyDjJWOV/ulOW60Zb3kXJfrx2oZOtGtDXDFKD1mXuahQgoM5QOjuZhF7gFRNjA=="],
 
@@ -579,6 +580,8 @@
     "expo-modules-core": ["expo-modules-core@55.0.22", "", { "dependencies": { "invariant": "^2.2.4" }, "peerDependencies": { "react": "*", "react-native": "*", "react-native-worklets": "^0.7.4 || ^0.8.0" }, "optionalPeers": ["react-native-worklets"] }, "sha512-NC5GyvCHvnOvi5MtgLv68oUSrRP/0UORGzU/MX+7BIA8ctgBPxKSjPXPSfhwk3gMzj7eHBhYwlu0HJsIEnVd9A=="],
 
     "expo-server": ["expo-server@55.0.7", "", {}, "sha512-Cc1btFyPsD9P4DT2xd1pG/uR96TLVMx0W+dPm9Gjk1uDV9xuzvMcUsY7nf9bt4U5pGyWWkCXmPJcKwWfdl51Pw=="],
+
+    "expo-splash-screen": ["expo-splash-screen@55.0.19", "", { "dependencies": { "@expo/prebuild-config": "^55.0.16" }, "peerDependencies": { "expo": "*" } }, "sha512-l8BWI/inLJW46Ojz5NgwvaM8LftrdXeFfZBUXhAoZxg44Qo2xKY76s0S1h3WIxWXT4sRKwK8YQzGr4k+zHubxQ=="],
 
     "expo-sqlite": ["expo-sqlite@55.0.15", "", { "dependencies": { "await-lock": "^2.2.2" }, "peerDependencies": { "expo": "*", "react": "*", "react-native": "*" } }, "sha512-vxE5fs6l953QSIyievQ8TuSstj62eC7zUREjNzbUOwRWaHGGnhnlPJM1HLoTIv+oIt3+b1m7k2fmcDGkpK5t3w=="],
 
@@ -1068,6 +1071,8 @@
 
     "zod": ["zod@3.25.76", "", {}, "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ=="],
 
+    "@expo/cli/@expo/prebuild-config": ["@expo/prebuild-config@55.0.14", "", { "dependencies": { "@expo/config": "~55.0.14", "@expo/config-plugins": "~55.0.8", "@expo/config-types": "^55.0.5", "@expo/image-utils": "^0.8.13", "@expo/json-file": "^10.0.13", "@react-native/normalize-colors": "0.83.4", "debug": "^4.3.1", "resolve-from": "^5.0.0", "semver": "^7.6.0", "xml2js": "0.6.0" }, "peerDependencies": { "expo": "*" } }, "sha512-88Ou8HF8sWcXD9wduQZ2XBwNMzD8t2x3FtlM0F++rhl9a+aNk2SAj8yhwuGsoEJpbxWG7qq35Yof1r7uU4Z16w=="],
+
     "@expo/cli/glob": ["glob@13.0.6", "", { "dependencies": { "minimatch": "^10.2.2", "minipass": "^7.1.3", "path-scurry": "^2.0.2" } }, "sha512-Wjlyrolmm8uDpm/ogGyXZXb1Z+Ca2B8NbJwqBVg0axK9GbBeoS7yGV6vjXnYdGm6X53iehEuxxbyiKp8QmN4Vw=="],
 
     "@expo/cli/semver": ["semver@7.7.4", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA=="],
@@ -1091,6 +1096,10 @@
     "@expo/image-utils/semver": ["semver@7.7.4", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA=="],
 
     "@expo/metro-config/glob": ["glob@13.0.6", "", { "dependencies": { "minimatch": "^10.2.2", "minipass": "^7.1.3", "path-scurry": "^2.0.2" } }, "sha512-Wjlyrolmm8uDpm/ogGyXZXb1Z+Ca2B8NbJwqBVg0axK9GbBeoS7yGV6vjXnYdGm6X53iehEuxxbyiKp8QmN4Vw=="],
+
+    "@expo/prebuild-config/@expo/config": ["@expo/config@55.0.15", "", { "dependencies": { "@expo/config-plugins": "~55.0.8", "@expo/config-types": "^55.0.5", "@expo/json-file": "^10.0.13", "@expo/require-utils": "^55.0.4", "deepmerge": "^4.3.1", "getenv": "^2.0.0", "glob": "^13.0.0", "resolve-workspace-root": "^2.0.0", "semver": "^7.6.0", "slugify": "^1.3.4" } }, "sha512-lHc0ELIQ8126jYOMZpLv3WIuvordW98jFg5aT/J1/12n2ycuXu01XLZkJsdw0avO34cusUYb1It+MvY8JiMduA=="],
+
+    "@expo/prebuild-config/@react-native/normalize-colors": ["@react-native/normalize-colors@0.83.6", "", {}, "sha512-bTM24b5v4qN3h52oflnv+OujFORn/kVi06WaWhnQQw14/ycilPqIsqsa+DpIBqdBrXxvLa9fXtCRrQtGATZCEw=="],
 
     "@expo/prebuild-config/semver": ["semver@7.7.4", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA=="],
 
@@ -1183,6 +1192,8 @@
     "wrap-ansi/strip-ansi": ["strip-ansi@6.0.1", "", { "dependencies": { "ansi-regex": "^5.0.1" } }, "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A=="],
 
     "xml2js/xmlbuilder": ["xmlbuilder@11.0.1", "", {}, "sha512-fDlsI/kFEx7gLvbecc0/ohLG50fugQp8ryHzMTuW9vSa1GJ0XYWKnhsUx7oie3G98+r56aTQIUB4kht42R3JvA=="],
+
+    "@expo/prebuild-config/@expo/config/glob": ["glob@13.0.6", "", { "dependencies": { "minimatch": "^10.2.2", "minipass": "^7.1.3", "path-scurry": "^2.0.2" } }, "sha512-Wjlyrolmm8uDpm/ogGyXZXb1Z+Ca2B8NbJwqBVg0axK9GbBeoS7yGV6vjXnYdGm6X53iehEuxxbyiKp8QmN4Vw=="],
 
     "@istanbuljs/load-nyc-config/js-yaml/argparse": ["argparse@1.0.10", "", { "dependencies": { "sprintf-js": "~1.0.2" } }, "sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg=="],
 

@@ -5,26 +5,34 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.matheusburey.compras"
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true,
       "package": "com.matheusburey.compras"
     },
     "plugins": [
-      "expo-sqlite"
-    ]
+      "expo-sqlite",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#C4C4C4",
+          "dark": {
+            "backgroundColor": "#22242A"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a056212e-e949-48b6-946c-5358f2eca677"
+      }
+    }
   }
 }
